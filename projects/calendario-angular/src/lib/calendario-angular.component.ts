@@ -1,14 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'cal-calendario-angular',
-  template: `
-    <p>
-      calendario-angular works!
-    </p>
-  `,
-  styles: [
-  ]
+  selector: 'calendario-angular',
+  templateUrl: './calendario-angular.component.html',
+  styleUrls: ['./calendario-angular.component.scss']
 })
 export class CalendarioAngularComponent implements OnInit {
 
