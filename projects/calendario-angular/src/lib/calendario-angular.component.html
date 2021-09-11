@@ -1,1 +1,18 @@
-<p>calendário angular</p>
+<div class='calendario'>
+
+  <ng-container *ngIf="showTitle">
+    <div class="calendario__title">{{title}}</div>
+  </ng-container>
+
+  <form [formGroup]="calendar">
+    <input
+      formControlName="date"
+      name="calendario-angular"
+      [placeholder]="title"
+      class="calendario__input"
+      (focus)="handleFocusInput()"
+      (focusout)="handleFocusoutInput()"
+    />
+  </form>
+
+</div>

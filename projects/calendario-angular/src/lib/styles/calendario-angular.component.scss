@@ -1,0 +1,37 @@
+@import "./variables.scss";
+@import "./colors.scss";
+
+.calendario {
+  font-family: $font-size;
+
+  &__title {
+    background-color: #fff;
+    font-size: 0.75rem;
+    margin: -12px 0px 0px 12px;
+    position: absolute;
+    padding: 5px;
+    color: $texto-padrao;
+  }
+
+  &__input {
+    padding: 20px 15px;
+    border: 1px solid $border;
+    width: 100%;
+    border-radius: 5px;
+    font-size: $font-size;
+  }
+
+  &__input::placeholder {
+    color: $texto-padrao;
+    font-size: $font-size;
+  }
+
+  &__input:focus {
+    outline-width: 0;
+    border-radius: 5px 5px 0px 0px;
+  }
+
+  &__input:focus::placeholder {
+    color: #fff;
+  }
+}
