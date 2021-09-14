@@ -1,5 +1,6 @@
 @import "./variables.scss";
 @import "./colors.scss";
+@import "./mixins.scss";
 
 .calendario {
   font-family: $font-size;
@@ -14,11 +15,8 @@
   }
 
   &__input {
-    padding: 20px 15px;
-    border: 1px solid $border;
-    width: 100%;
+    @include input;
     border-radius: 5px;
-    font-size: $font-size;
   }
 
   &__input::placeholder {
@@ -26,12 +24,27 @@
     font-size: $font-size;
   }
 
-  &__input:focus {
-    outline-width: 0;
-    border-radius: 5px 5px 0px 0px;
+  &__input--focus {
+    @include input;
+    border-radius: 5px 5px 5px 0px;
   }
 
-  &__input:focus::placeholder {
+  &__input:focus, &__input--focus:focus {
+    outline-width: 0;
+  }
+
+  &__input--focus:focus::placeholder {
     color: #fff;
+  } 
+
+  &__data {
+    border: 1px solid $border;
+    padding: 20px;
+    background-color: #fff;
+    position: relative;
+    width: 200px;
+    height: 150px;
+    border-radius: 0px 0px 5px 5px;
+    margin-top: -1px;
   }
 }

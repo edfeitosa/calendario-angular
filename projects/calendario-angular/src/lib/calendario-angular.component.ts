@@ -9,8 +9,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CalendarioAngularComponent implements OnInit {
 
   @Input() title: string = 'Título do Input';
-  showTitle: boolean = false;
-  calendar!: FormGroup;
+  mostrarTitulo: boolean = false;
+  estaFocado: boolean = false;
+  mostrarCalendario: boolean = false;
+  calendario!: FormGroup;
 
   constructor(
     private form: FormBuilder
@@ -21,17 +23,35 @@ export class CalendarioAngularComponent implements OnInit {
   }
 
   private formCalendario(): void {
-    this.calendar = this.form.group({
+    this.calendario = this.form.group({
       date: []
     })
   }
 
   handleFocusInput(): void {
-    !this.showTitle && (this.showTitle = true);
+    this.alterarExibicaoTitulo();
+    this.alteraFocoInput();
+    this.alterarExibicaoCalendario();
   }
 
   handleFocusoutInput(): void {
-    (!this.calendar.get('date')?.value && this.showTitle) && (this.showTitle = false);
+    (!this.calendario.get('date')?.value) && (
+      this.alterarExibicaoTitulo(false),
+      this.alteraFocoInput(false),
+      this.alterarExibicaoCalendario(false)
+    )
+  }
+
+  private alterarExibicaoTitulo(valor: boolean = true): void {
+    this.mostrarTitulo = valor
+  }
+
+  private alteraFocoInput(valor: boolean = true): void {
+    this.estaFocado = valor;
+  }
+
+  private alterarExibicaoCalendario(valor: boolean = true): void {
+    this.mostrarCalendario = valor;
   }
 
 }

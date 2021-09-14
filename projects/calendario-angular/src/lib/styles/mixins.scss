@@ -1,0 +1,9 @@
+@import "./variables.scss";
+@import "./colors.scss";
+
+@mixin input {
+  padding: 20px 15px;
+  border: 1px solid $border;
+  width: 100%;
+  font-size: $font-size;
+}
