@@ -1,0 +1,19 @@
+@import "../../styles/variables.scss";
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+
+.datas {
+  padding: 20px;
+  border: 1px solid $border;
+  background-color: #fff;
+  position: relative;
+  width: 200px;
+  height: 150px;
+  border-radius: 0px 0px 5px 5px;
+  margin-top: -1px;
+
+  &__picker {
+    font-size: 1rem;
+  }
+
+}

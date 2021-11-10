@@ -17,16 +17,16 @@
   &__input {
     @include input;
     border-radius: 5px;
+
+    &--focus {
+      @include input;
+      border-radius: 5px 5px 5px 0px;
+    }
   }
 
   &__input::placeholder {
     color: $texto-padrao;
     font-size: $font-size;
-  }
-
-  &__input--focus {
-    @include input;
-    border-radius: 5px 5px 5px 0px;
   }
 
   &__input:focus, &__input--focus:focus {
@@ -35,16 +35,5 @@
 
   &__input--focus:focus::placeholder {
     color: #fff;
-  } 
-
-  &__data {
-    border: 1px solid $border;
-    padding: 20px;
-    background-color: #fff;
-    position: relative;
-    width: 200px;
-    height: 150px;
-    border-radius: 0px 0px 5px 5px;
-    margin-top: -1px;
   }
 }

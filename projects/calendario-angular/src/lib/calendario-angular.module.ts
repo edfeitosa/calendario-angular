@@ -4,10 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CalendarioAngularComponent } from './calendario-angular.component';
+import { DatasComponent } from './components/datas/datas.component';
 
 @NgModule({
   declarations: [
-    CalendarioAngularComponent
+    CalendarioAngularComponent,
+    DatasComponent
   ],
   imports: [
     CommonModule,
